@@ -8,6 +8,7 @@ function BookStore() {
     const [inputValue, setInputValue] = useState('Harry Porter');
     const[searchValue,setSearchValue]=useState('');
 
+    let smallThumbnail = book.volumeInfo?.imageLinks?.smallThumbnail || "default-thumbnail.jpg";
 
     useEffect(() => {
       console.log(searchValue);
