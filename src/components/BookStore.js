@@ -2,13 +2,14 @@ import React,{useState,useEffect} from 'react';
 import axios from 'axios';
 import BookData from './BookData';
 import './BookStore.css';
+import img from './Default_book_cover.webp';
 
 function BookStore() {
     const [userData, setUserData] = useState([]);
-    const [inputValue, setInputValue] = useState('Harry Porter');
-    const[searchValue,setSearchValue]=useState('');
+    const [inputValue, setInputValue] = useState('Harry ');
+    const[searchValue,setSearchValue]=useState('Harry ');
 
-    let smallThumbnail = book.volumeInfo?.imageLinks?.smallThumbnail || "default-thumbnail.jpg";
+    
 
     useEffect(() => {
       console.log(searchValue);
@@ -54,10 +55,11 @@ function BookStore() {
 
               <BookData
                 key={item.id}
-                image={item.volumeInfo.imageLinks.smallThumbnail}
+                image={item.volumeInfo?.imageLinks?.smallThumbnail || img}
                 title={item.volumeInfo.title}
                 
-                author={item.volumeInfo.authors.join(', ')}
+                author={item.volumeInfo?.authors?.join(', ') }
+                link={item.volumeInfo.previewLink}
               />
         )}
 

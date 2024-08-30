@@ -1,4 +1,4 @@
-/* .book-data{
+.book-data{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -24,4 +24,4 @@
     font-size: medium;
     font-family:'Times New Roman', Times, serif;
     font-weight: bold;
-} */
+}
